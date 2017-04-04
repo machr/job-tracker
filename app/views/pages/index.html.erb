@@ -1,1 +1,27 @@
 
+
+<div class="container columns">
+  <div class="column">
+    <h1 class="notification is-success">This should be RED</h1>
+  </div>
+  <div class="column">
+    <h1>This should be RED</h1>
+  </div>
+  <div class="column">
+    <h1>This should be RED</h1>
+  </div>
+  <div class="column">
+    <h1>This should be RED</h1>
+  </div>
+</div>
+<h1>login</h1>
+<h2>Hello ,  <%= current_user.name %> </h2>
+<%= form_tag '/session', method: 'post' do %>
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <label for="">email</label>
+  <input type="text" name="email">
+  <label for="">password</label>
+  <input type="password" name="password">
+  <button>login</button>
+<% end %>
+
