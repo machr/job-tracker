@@ -1,24 +1,33 @@
-# README
+# Group Project: Job Tracker API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Technologies Used
 
-Things you may want to cover:
+### Front End:
+* HTML
 
-* Ruby version
+* CSS
 
-* System dependencies
+* Javascript
 
-* Configuration
+* JQuery
 
-* Database creation
+* AJAX
 
-* Database initialization
+* Handlebars
 
-* How to run the test suite
+### Back End:
+* Ruby On Rails
 
-* Services (job queues, cache servers, search engines, etc.)
+* PostgreSQL
 
-* Deployment instructions
+## General Approach
 
-* ...
+First step that we did, was to brainstorm for the user story and did a rough sketch of what our website would look like. We then wrote down the database table of what is needed for our API so that we know what are the primary keys for our database. After coming up with the database, we decided on what technologies we would use to run our API on.
+
+After we have all the components and ideas of how our website would look like, we then divide the task of building our website.
+
+http://user_stories
+
+http://wireframes
+
+## Unsolved Problems or Major Hurdles:
