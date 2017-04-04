@@ -1,27 +1,31 @@
+<!-- attatch template to this -->
+<section class="section">
+  <div class="container">
+    <div class="columns job-listing">
+        <div class="column">Date Added</div>
+        <div class="column">Position</div>
+        <div class="column">Company</div>
+        <div class="column">Contact</div>
+        <div class="column">Url</div>
+        <div class="column">Notes</div>
+        <div class="column notification is-success">Status</div>
+    </div>
+  </div>
+</section>
+
+<!-- attach template to .job-listings -->
+<section class="section job-listings"></section>
 
 
-<div class="container columns">
-  <div class="column">
-    <h1 class="notification is-success">This should be RED</h1>
-  </div>
-  <div class="column">
-    <h1>This should be RED</h1>
-  </div>
-  <div class="column">
-    <h1>This should be RED</h1>
-  </div>
-  <div class="column">
-    <h1>This should be RED</h1>
-  </div>
-</div>
-<h1>login</h1>
-<h2>Hello ,  <%= current_user.name %> </h2>
-<%= form_tag '/session', method: 'post' do %>
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <label for="">email</label>
-  <input type="text" name="email">
-  <label for="">password</label>
-  <input type="password" name="password">
-  <button>login</button>
-<% end %>
 
+<script id="job-listing-template" type="text/x-handlebars-template">
+  <div class="columns job-listing" data-id="{{ id }}">
+    <div class="column">{{ created_at }}</div>
+    <div class="column">{{ position }}</div>
+    <div class="column">{{ company }}</div>
+    <div class="column">{{ contact}}</div>
+    <div class="column">{{ url }}</div>
+    <div class="column">{{ notes }}</div>
+    <div class="column notification is-success">{{ status }}</div>
+  </div>
+</script>
