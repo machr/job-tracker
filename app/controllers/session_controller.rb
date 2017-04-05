@@ -12,24 +12,18 @@ class SessionController < ApplicationController
       render :register
     end
   end
-
   def create
     user = User.find_by(email: params[:email])
     if user && user.authenticate(params[:password])
-
       session[:user_id] = user.id
-      redirect_to '/'
+      redirect_to '/dashboard'
     else
-      render :new
+      #redirect to failed login page?
+      redirect_to '/'
     end
   end
-
   def destroy
     session[:user_id] = nil
-    redirect_to '/login'
-  end
-
-  def register
-
+    redirect_to '/'
   end
 end

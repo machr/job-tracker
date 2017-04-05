@@ -9,6 +9,33 @@
   </head>
 
   <body>
+    <nav class="nav">
+      <div class="container">
+        <div class="nav-left">
+          <a href="/"><h1>Job Tracker</h1></a>
+        </div>
+        <div class="nav-right">
+          <% if logged_in? %>
+            <h2>Hello , <span class="current-user"><%= current_user.name %></span> </h2>
+            <%= form_tag '/session', method: 'delete' do %>
+              <button>Logout</button>
+            <% end %>
+
+          <% else %>
+            <%= form_tag '/session', method: 'post' do %>
+              <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+              <label for="">email</label>
+              <input type="text" name="email">
+              <label for="">password</label>
+              <input type="password" name="password">
+              <button>login</button>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </nav>
+
     <%= yield %>
+
   </body>
 </html>
