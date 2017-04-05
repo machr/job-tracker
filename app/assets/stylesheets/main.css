@@ -1,13 +1,8 @@
-body {
-  background-size: 100%;
-  background-image: url("https://images.pexels.com/photos/64778/pexels-photo-64778.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb");
+.current-user {
+  font-weight: 700;
 }
 
-.container {
-  margin: 0 auto;
-  width: 100%;
-}
 
-h1 {
-  color: ;
+.job-listing {
+  border: 1px solid grey;
 }
