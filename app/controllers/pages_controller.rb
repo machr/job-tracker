@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
   def index
-  end
+    user = session[:user_id]
+    end
 end

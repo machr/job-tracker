@@ -63,12 +63,8 @@ function listingsIndex(){
 //       });
 //     });
 //   });
-
-
-
-
-
 $(document).ready(function() {
   // Callback to Handlebar function
   listingsIndex();
 });
+

@@ -6,8 +6,6 @@ Rails.application.routes.draw do
   resources :dashboard
   get '/dashboard', to: 'dashboard#index'
 
-
-
   resources :sessions
   post '/session', to: 'session#create'
   delete '/session', to: 'session#destroy'

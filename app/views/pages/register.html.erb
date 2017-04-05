@@ -1,0 +1,22 @@
+<h1>Registration Form</h1>
+
+<%= form_tag '/session', method: 'post' do %>
+<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+<form name="registerForm" action="/register" method="post">
+
+  <label for=""></label>
+  <input name="name" required type="text" placeholder="Enter Username">
+
+  <label for=""></label>
+  <input name="email" required type="email" placeholder="Enter Email address">
+
+  <label for=""></label>
+  <input id="password" name="password" required type="password" placeholder="Enter Password">
+
+  <label for=""></label>
+  <input id="confirm_password" name="confirm_password" required type="password" placeholder="Confirm Password">
+
+
+</form>
+
+</body>
