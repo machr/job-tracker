@@ -19,6 +19,44 @@
   </div>
 </section>
 
+<section class="section">
+  <div class="container">
+    <div class="columns">
+      <div class="column if-half">
+
+        <div class="field">
+          <label class="label">Positon</label>
+          <p class="control">
+            <input class="input" type="text" placeholder="{{ position }}">
+          </p>
+        </div>
+        <div class="field">
+          <label class="label">Company</label>
+          <p class="control">
+            <input class="input" type="text" placeholder="{{ company }}">
+          </p>
+        </div>
+        <div class="field">
+          <label class="label">Contact</label>
+          <p class="control">
+            <input class="input" type="text" placeholder="{{ contact }}">
+          </p>
+        </div>
+        <div class="field">
+          <label class="label">URL</label>
+          <p class="control">
+            <input class="input" type="text" placeholder="{{ url }}">
+          </p>
+        </div>
+
+      </div>
+      <div class="column if-half">
+        <h1>Activity Log</h1>
+      </div>
+    </div>
+  </div>
+</section>
+
 <script id="job-listing-template" type="text/x-handlebars-template">
   <div class="columns job-listing" data-id="{{ id }}">
     <div class="column is-1">{{ created_at }}</div>
@@ -32,12 +70,11 @@
 </script>
 
 <script id="edit-listing-template" type="text/x-handlebars-template">
-  <div class="columns job-listing" data-id="{{ id }}">
-    <div class="field">
-      <label class="label">Name</label>
-      <p class="control">
-        <input class="input" type="text" placeholder="Text input">
-      </p>
-    </div>
+  <div class="field">
+    <label class="label">Name</label>
+    <p class="control">
+      <input class="input" type="text" placeholder="Text input">
+    </p>
   </div>
+
 </script>
