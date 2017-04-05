@@ -1,6 +1,6 @@
 <h1>Registration Form</h1>
 
-<%= form_tag '/session/new', method: 'post' do %>
+<%= form_tag '/session', method: 'post' do %>
 <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 <form name="registerForm" action="/register" method="post">
 
@@ -11,39 +11,12 @@
   <input name="email" required type="email" placeholder="Enter Email address">
 
   <label for=""></label>
-  <input name="password" required type="password" placeholder="Enter Password">
+  <input id="password" name="password" required type="password" placeholder="Enter Password">
 
   <label for=""></label>
-  <input name="confirm_password" required type="password" placeholder="Confirm Password">
+  <input id="confirm_password" name="confirm_password" required type="password" placeholder="Confirm Password">
 
-  <button name="button">Register</button>
 
 </form>
 
-<% end %>
-
-<script>
-function validateForm() {
-    var x = document.forms["registerForm"]["email"].value;
-    var atpos = x.indexOf("@");
-    var dotpos = x.lastIndexOf(".");
-    if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) {
-        alert("Not a valid e-mail address");
-        return false;
-    }
-}
-
-var password = document.getElementById("password")
-  , confirm_password = document.getElementById("confirm_password");
-
-function validatePassword(){
-  if(password.value != confirm_password.value) {
-    confirm_password.setCustomValidity("Passwords Don't Match");
-  } else {
-    confirm_password.setCustomValidity('');
-  }
-}
-
-password.onchange = validatePassword;
-confirm_password.onkeyup = validatePassword;
-</script>
+</body>

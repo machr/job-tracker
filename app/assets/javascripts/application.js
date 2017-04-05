@@ -15,3 +15,4 @@
 //= require turbolinks
 //= require 'handlebars'
 //= require 'app'
+//= require 'validation'
