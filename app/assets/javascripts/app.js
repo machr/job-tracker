@@ -6,10 +6,10 @@ function listingsIndex(){
   var editListingTemplate = Handlebars.compile( $('#edit-listing-template').html() );
   $.ajax({ url: apiUrl }).done(renderIndex);
 
-  // function renderEditForm(event){
-  //   var listingId = $(event.target).closest('.job-listing').data('id');
-  //   console.log(listingId);
-  // }
+  function renderEditForm(event){
+    var listingId = $(event.target).closest('.job-listing').data('id');
+    console.log(listingId);
+  }
 
   $('.job-listings').on('click', '.job-listing', renderEditForm);
 
