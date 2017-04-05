@@ -91,4 +91,47 @@ class Api::JobListingsController < ApplicationController
       render json: {message: 'Failed to Delete Activity'}
     end
   end
+
+  def get_jobpostings
+    job_postings = JobPosting.all
+    #Retrieve job posting plus username to display who posted the job
+    render json: job_postings.as_json(include: { user: { only: [:name] } } )
+
+  end
+
+  def create_jobposting
+    job_posting = JobPosting.new
+    job_posting.user_id = session[:user_id]
+    job_posting.position = params[:position]
+    job_posting.url = params[:url]
+    url = Domainatrix.parse(params[:url])
+    job_posting.url_host = url.domain
+    if job_posting.save
+      render json: job_posting
+    else
+      render json: {message: 'Failed to Add Job Posting'}
+    end
+  end
+
+  def update_jobposting
+    job_posting = JobPosting.find_by(id:params[:jobposting_id])
+    job_posting.position = params[:position]
+    job_posting.url = params[:url]
+    url = Domainatrix.parse(params[:url])
+    job_posting.url_host = url.domain
+    if job_posting.save
+      render json: job_posting
+    else
+      render json: {message: 'Failed to Add Job Posting'}
+    end
+  end
+
+  def delete_jobposting
+    job_posting = JobPosting.find_by(id: params[:jobposting_id])
+    if job_posting.destroy
+      render json: {message: 'Successfully Deleted Job posting'}
+    else
+      render json: {message: 'Failed to Delete Job Listing'}
+    end
+  end
 end
