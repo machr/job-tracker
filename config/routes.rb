@@ -10,5 +10,7 @@ Rails.application.routes.draw do
   post '/session', to: 'session#create'
   delete '/session', to: 'session#destroy'
 
+  get '/register', to: 'pages#register'
+
   root 'pages#index'
 end
