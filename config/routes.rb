@@ -3,9 +3,14 @@ Rails.application.routes.draw do
   resources :job_listings
   get '/api/job_listings', to: 'api/job_listings#index'
 
+  resources :dashboard
+  get '/dashboard', to: 'dashboard#index'
+
+
+
+  resources :sessions
   post '/session', to: 'session#create'
+  delete '/session', to: 'session#destroy'
 
   root 'pages#index'
-
-
 end
