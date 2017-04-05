@@ -8,18 +8,7 @@ function listingsIndex(){
     var listingId = $(event.target).closest('.job-listing').data('id');
     console.log(listingId);
   }
-
-  $('.job-listings').on('click', '.job-listing', renderEditForm);
-
-  function renderIndex(listings){
-    console.log(listings);
-    listings.forEach(function(listing){
-      var html = jobListingTemplate(listing);
-      $('.job-listings').append(html);
-    });
-  }
 }
-
 // $('#edit-card').on('submit', function(event){
 // //       event.preventDefault();
 // //       console.log(cardId);
@@ -66,4 +55,10 @@ $(document).ready(function() {
   if($('#job-listing-template').length) {
     listingsIndex();
   }
+
+  if( $('.dashboard').length){
+    //  console.log('true');
+     getDashboardListings();
+  }
+
 });

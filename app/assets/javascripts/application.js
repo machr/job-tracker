@@ -14,5 +14,8 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require 'handlebars'
-//= require 'app'
+
 //= require 'validation'
+//= require 'dashboard'
+
+//= require 'app'

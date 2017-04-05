@@ -43,8 +43,9 @@
 </section>
 
 <!-- attatch template to this -->
-<!-- <section class="section">
+<section class="section dashboard">
   <div class="container">
+    <!-- This is the header row -->
     <div class="columns job-listing">
         <div class="column is-1">Date Added</div>
         <div class="column is-2">Position</div>
@@ -59,16 +60,19 @@
 
 <section class="section">
   <div class="container job-listings">
+  <!-- attach template to .job-listings -->
   </div>
-</section> -->
+</section>
 
+<!-- Template to edit particular listing  -->
+<script id="edit-listing-template" type="text/x-handlebars-template">
 <section class="section">
   <div class="container">
     <div class="columns">
       <div class="column if-half">
 
         <div class="field">
-          <label class="label">Positon</label>
+          <label class="label">PositonQUE</label>
           <p class="control">
             <input class="input" type="text" placeholder="{{ position }}">
           </p>
@@ -99,7 +103,9 @@
     </div>
   </div>
 </section>
+</script>
 
+<!-- Template to show each listing  -->
 <script id="job-listing-template" type="text/x-handlebars-template">
   <div class="columns job-listing" data-id="{{ id }}">
     <div class="column is-1">{{ created_at }}</div>
