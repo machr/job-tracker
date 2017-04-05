@@ -16,7 +16,11 @@
         </div>
         <div class="nav-right">
           <% if logged_in? %>
-            <h2>Hello , <span class="current-user"><%= current_user.name %></span>  </h2>
+            <h2>Hello , <span class="current-user"><%= current_user.name %></span> </h2>
+            <%= form_tag '/session', method: 'delete' do %>
+              <button>Logout</button>
+            <% end %>
+
           <% else %>
             <%= form_tag '/session', method: 'post' do %>
               <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
@@ -32,6 +36,6 @@
     </nav>
 
     <%= yield %>
-    
+
   </body>
 </html>
