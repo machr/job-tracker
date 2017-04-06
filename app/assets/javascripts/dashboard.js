@@ -7,6 +7,9 @@ function getDashboardListings(){
   function renderIndex(listings){
     // console.log(listings);
     listings.forEach(function(listing){
+      var x = new Date(listing.created_at);
+      var fullDate = x.getDate() + " / " + (x.getMonth()+1) + " / " + x.getFullYear();
+      listing.created_at = fullDate;
       var html = jobListingTemplate(listing);
       $('.job-listings').append(html);
     });
