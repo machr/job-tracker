@@ -46,17 +46,75 @@
   </div>
 </section>
 
+
+
 <section class="hero is-medium is-primary is-bold">
   <div class="hero-body">
-    <div class="container">
+    <div class="container create-listing-wrap">
       <a href="#">
         <h1 class="title">
           Add new listing
         </h1>
       </a>
-      <h2 class="subtitle">
-        Primary bold subtitle
-      </h2>
+
+      <script id="create-listing-template" type="text/x-handlebars-template">
+        <form id="create-listing-form">
+        <div class="column if-half">
+          <div class="field">
+            <label class="label">Position</label>
+            <p class="control">
+              <input class="input create-listing-position" type="text" placeholder="e.g Junior Front End Developer" >
+            </p>
+          </div>
+          <div class="field">
+            <label class="label">Company</label>
+            <p class="control">
+              <input class="input create-listing-company" type="text" placeholder="e.g Evil Corp" >
+            </p>
+          </div>
+          <div class="field">
+            <label class="label">Contact</label>
+            <p class="control">
+              <input class="input create-listing-contact" type="text" placeholder="e.g Tyrell Wellick" >
+            </p>
+          </div>
+          <div class="field">
+            <label class="label">URL</label>
+            <p class="control">
+              <input class="input create-listing-url" type="text" placeholder="e.g evilcorp.com.au" >
+            </p>
+          </div>
+          <div class="field">
+            <label class="label">NOTES</label>
+            <p class="control">
+              <input class="input create-listing-notes" type="text" placeholder="e.g Horrible work environment. Great Pay" >
+            </p>
+          </div>
+          <div class="field has-addons">
+            <p class="control is-expanded">
+              <label class="label">Current Status</label>
+              <span class="select is-fullwidth">
+                <select name="create-listing-status" class="create-listing-status">
+                  <option value="just-added">Just Added</option>
+                  <option value="writing-application">Writing Application</option>
+                  <option value="application-submitted">Application Submitted</option>
+                  <option value="interview-codetest">Interview / Code Test</option>
+                  <option value="rejected">Rejected</option>
+                </select>
+              </span>
+            </p>
+          </div>
+
+            <div class="field">
+              <p class="control">
+                <a id="add-listing" class="button is-success">Add new</a>
+              </p>
+            </div>
+
+          </div>
+        </form>
+      </script>
+
     </div>
   </div>
 </section>
@@ -167,15 +225,14 @@
   </div>
 </script>
 
-<script id="edit-listing-template" type="text/x-handlebars-template">
+<!-- <script id="edit-listing-template" type="text/x-handlebars-template">
   <div class="field">
     <label class="label">Name</label>
     <p class="control">
       <input class="input" type="text" placeholder="Text input">
     </p>
   </div>
-
-</script>
+</script> -->
 
 <script type="text/javascript">
   $(".delete").on( "click", function(event) {

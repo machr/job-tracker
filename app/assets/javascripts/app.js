@@ -3,5 +3,6 @@ $(document).ready(function() {
   if($('#job-listing-template').length) {
     getDashboardListings();
     updateListing();
+    createNewListing();
   }
 });
