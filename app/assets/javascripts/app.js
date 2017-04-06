@@ -4,5 +4,6 @@ $(document).ready(function() {
     getDashboardListings();
     updateListing();
     createNewListing();
+    // deleteListing();
   }
 });

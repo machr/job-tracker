@@ -58,7 +58,7 @@ class Api::JobListingsController < ApplicationController
   end
 
   def delete_joblisting
-    joblisting = JobListing.find_by(id: params[:job_id])
+    joblisting = JobListing.find_by(id: params[:id])
     if joblisting.destroy
       render json: {message: 'Successfully Deleted'}
     else
