@@ -1,3 +1,47 @@
+<section class="section">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="content">
+          <h2>Your Job Diary</h2>
+          <div class="box">
+            <h4>Today</h4>
+            <h5 class="notification">
+              <button class="delete is-small"></button>
+              You have added <%= current_user_daily_job_listing_num %>
+              job application(s),
+              <% if current_user_daily_job_listing_num.to_i >= 5 %>
+              <span class="tag is-success"> You have met your daily goal of 5 job applications </span>
+              <% else %>
+              <span class="tag is-danger"> <%= remain_daily_goals%> </span> more jobs to meet your daily goal
+              <% end %>
+            </h5>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+            <a>#css</a> <a>#responsive</a>
+            <br>
+          </div>
+          <hr>
+          <div class="box">
+            <h4>This Week</h4>
+            <h5 class="notification">
+              <button class="delete is-small"></button>
+              You have added <%= current_user_weekly_job_listing_num %>
+              job application(s),
+              <% if current_user_daily_job_listing_num.to_i >= 35 %>
+              <span class="tag is-success"> You have met your weekly goal of 35 job applications </span>
+              <% else %>
+              <span class="tag is-danger"> <%= remain_weekly_goals %> </span> more jobs to meet your weekly goal.
+              <% end %>
+            </h5>
+            <small>11:09 PM - 1 Jan 2016</small>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- attatch template to this -->
 <section class="section">
   <div class="container">
@@ -77,4 +121,10 @@
     </p>
   </div>
 
+</script>
+
+<script type="text/javascript">
+  $(".delete").on( "click", function(event) {
+  $(event.target).closest(".box").fadeOut( "slow" );
+  });
 </script>
