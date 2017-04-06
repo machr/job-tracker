@@ -66,9 +66,7 @@
   </div>
 </section>
 
-<section class="section edit-form-wrap">
-
-</section>
+<section class="section edit-form-wrap"></section>
 
 
 
@@ -108,12 +106,20 @@
         <input class="input listing-notes" type="text" placeholder="{{ notes }}" >
       </p>
     </div>
-    <div class="field">
-      <!-- <label class="label">NOTES</label> -->
-      <p class="control">
-        <input class="input listing-status" type="text" placeholder="{{ status }}" >
+    <div class="field has-addons">
+      <p class="control is-expanded">
+        <span class="select is-fullwidth">
+          <select name="input-status" class="input-status">
+            <option value="just-added">Just Added</option>
+            <option value="writing-application">Writing Application</option>
+            <option value="application-submitted">Application Submitted</option>
+            <option value="interview-codetest">Interview / Code Test</option>
+            <option value="rejected">Rejected</option>
+          </select>
+        </span>
       </p>
     </div>
+
     <div class="field">
       <p class="control">
         <a id="edit-listing" class="button is-success">Update</a>
