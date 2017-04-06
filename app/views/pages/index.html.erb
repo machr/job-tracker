@@ -1,1 +1,45 @@
-<h1 class="title"> this is the front page</h1>
+<section class="section">
+  <div class="container">
+    <div class="columns job-listing">
+        <div class="column is-2">Date Added</div>
+        <div class="column is-4">Position</div>
+        <div class="column is-2">Posted By</div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container job-listings">
+  <!-- attach template to .job-listings -->
+  </div>
+</section>
+
+<script id="job-posting-template" type="text/x-handlebars-template">
+  <div class="columns job-listing" data-id="{{ id }}">
+    <div class="column is-2">{{ created_at }}</div>
+    <div class="column is-4"><a href=" {{ url }} ">{{ position }}</a> ( {{ url_host }} )</div>
+    <div class="column is-2">{{ user.name }}</div>
+  </div>
+</script>
+
+<script type="text/javascript">
+
+function JobPostingsIndex(){
+  var apiUrl = '/api/job_postings';
+  var jobListingTemplate = Handlebars.compile( $('#job-posting-template').html() );
+  $.ajax({ url: apiUrl }).done(renderIndex);
+  function renderIndex(listings){
+    listings.forEach(function(listing){
+      var x = new Date(listing.created_at);
+      var fullDate = x.getDate() + " / " + (x.getMonth()+1) + " / " + x.getFullYear();
+      listing.created_at = fullDate;
+      var html = jobListingTemplate(listing);
+      $('.job-listings').append(html);
+    });
+  }
+}
+$(document).ready(function() {
+  // Callback to Handlebar function
+  JobPostingsIndex();
+});
+</script>

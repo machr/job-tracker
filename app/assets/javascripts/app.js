@@ -1,5 +1,3 @@
-console.log('log');
-
 function listingsIndex(){
   var apiUrl = '/api/job_listings/';
   var jobListingTemplate = Handlebars.compile( $('#job-listing-template').html() );
@@ -65,5 +63,7 @@ function listingsIndex(){
 //   });
 $(document).ready(function() {
   // Callback to Handlebar function
-  listingsIndex();
+  if($('#job-listing-template').length) {
+    listingsIndex();
+  }
 });
