@@ -14,7 +14,11 @@ function getDashboardListings(){
     $.ajax({
       url: apiUrl + listingId
     }).done(function(listing){
-      console.log(listing);
+      $('.listing-position').val(listing.position);
+      $('.listing-company').val(listing.company);
+      $('.listing-contact').val(listing.contact);
+      $('.listing-url').val(listing.url);
+      $('.listing-notes').val(listing.notes);
     });
 
   } );
