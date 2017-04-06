@@ -8,13 +8,15 @@
             <h4>Today</h4>
             <h5 class="notification">
               <button class="delete is-small"></button>
-              You have added <%= current_user_daily_job_listing_num %>
-              job application(s),
-              <% if current_user_daily_job_listing_num.to_i >= 5 %>
-              <span class="tag is-success"> You have met your daily goal of 5 job applications </span>
-              <% else %>
-              <span class="tag is-danger"> <%= remain_daily_goals%> </span> more jobs to meet your daily goal
-              <% end %>
+              <span class="tag is-light is-medium">
+                You have added <%= current_user_daily_job_listing_num %>
+                job application(s),
+                <% if current_user_daily_job_listing_num.to_i >= 5 %>
+                You have met your daily goal of <span class="tag is-success is-medium"> 5 </span> job applications.
+                <% else %>
+                <span class="tag is-danger is-medium"> <%= remain_daily_goals%> </span> more jobs to meet your daily goal
+                <% end %>
+            </span>
             </h5>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             Phasellus nec iaculis mauris. <a>@bulmaio</a>.
@@ -25,14 +27,16 @@
           <div class="box">
             <h4>This Week</h4>
             <h5 class="notification">
-              <button class="delete is-small"></button>
-              You have added <%= current_user_weekly_job_listing_num %>
-              job application(s),
-              <% if current_user_daily_job_listing_num.to_i >= 35 %>
-              <span class="tag is-success"> You have met your weekly goal of 35 job applications </span>
-              <% else %>
-              <span class="tag is-danger"> <%= remain_weekly_goals %> </span> more jobs to meet your weekly goal.
-              <% end %>
+              <span class="tag is-light is-medium">
+                <button class="delete is-small"></button>
+                You have added <%= current_user_weekly_job_listing_num %>
+                job application(s),
+                <% if current_user_daily_job_listing_num.to_i >= 35 %>
+                You have met your weekly goal of <span class="tag is-success is-medium"> 35 </span> job applications.
+                <% else %>
+                <span class="tag is-danger is-medium"> <%= remain_weekly_goals %> </span> more jobs to meet your weekly goal.
+                <% end %>
+            </span>
             </h5>
             <small>11:09 PM - 1 Jan 2016</small>
         </div>
