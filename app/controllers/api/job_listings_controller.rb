@@ -35,6 +35,12 @@ class Api::JobListingsController < ApplicationController
     end
   end
 
+  def get_listing_values
+    joblisting_values = JobListing.find_by(id: params[:id])
+    render json: joblisting_values
+  end
+
+
   def update_joblisting
     joblisting = JobListing.find_by(id: params[:job_id])
     joblisting.position = params[:position]

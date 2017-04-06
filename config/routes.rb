@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   resources :dashboard
   get '/dashboard', to: 'dashboard#index'
+  get '/api/job_listings/:id', to: 'api/job_listings#get_listing_values'
 
 
   resources :sessions
