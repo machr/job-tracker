@@ -1,38 +1,46 @@
-<h1>Registration Form</h1>
+<section class="section register_container">
+  <div class="container has-text-centered">
+    <div class="columns">
+      <div class="column is-half is-offset-one-quarter">
 
-<%= form_tag '/session', method: 'post' do %>
-<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-<form name="registerForm" action="/register" method="post">
+        <h1 class="title is-2">Registration Form</h1>
 
-  <div class="field">
-    <p class="control">
-      <label for=""></label>
-      <input name="name" required type="text" placeholder="Enter Username">
-    </p>
+
+        <%= form_tag '/session/register', method: 'post' do %>
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+        <div class="field">
+          <p class="control">
+            <label for=""></label>
+            <input class="input is-medium" class="input is-success" name="name" required type="text" placeholder="Enter Username">
+          </p>
+        </div>
+
+        <div class="field">
+          <p class="control">
+            <label for=""></label>
+            <input class="input is-medium" name="email" required type="email" placeholder="Enter Email address">
+          </p>
+        </div>
+
+        <div class="field">
+          <p class="control">
+            <label for=""></label>
+            <input class="input is-medium" id="password" name="password" required type="password" placeholder="Enter Password">
+          </p>
+        </div>
+
+        <div class="field">
+          <p class="control">
+            <label for=""></label>
+            <input class="input is-medium" id="confirm_password" name="confirm_password"  required type="password" placeholder="Confirm Password">
+          </p>
+        </div>
+        <button class="button is-medium" id="register" name="button">Register</button>
+      </div>
+    </div>
   </div>
-
-  <div class="field">
-    <p class="control">
-      <label for=""></label>
-      <input name="email" required type="email" placeholder="Enter Email address">
-    </p>
-  </div>
-
-  <div class="field">
-    <p class="control">
-      <label for=""></label>
-      <input id="password" name="password" required type="password" placeholder="Enter Password">
-    </p>
-  </div>
-
-  <div class="field">
-    <p class="control">
-      <label for=""></label>
-      <input id="confirm_password" name="confirm_password" required type="password" placeholder="Confirm Password">
-    </p>
-  </div>
-  <button id="register" name="button">Register</button>
-
-<% end %>
+</section>
+        <% end %>
 <!-- <script src="app.js"></script> -->
 </body>

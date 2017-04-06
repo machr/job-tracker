@@ -1,0 +1,12 @@
+<section class="section register_container">
+  <div class="column is-half is-offset-one-quarter">
+
+    <h1 class="title is-2 is spaced"><%= @message %></h1>
+    <% if !@failed %>
+      <p class="subtitle is-5">Please login to start using your Job Tracker</p>
+    <% else %>
+      <%  @message = "Sorry Please Register Again" %>
+      <p class="subtitle is-5">Please <a href="/register">re-register</a> again</p>
+    <% end %>
+  </div>
+</section>
