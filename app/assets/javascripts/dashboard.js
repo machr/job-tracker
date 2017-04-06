@@ -66,6 +66,19 @@ function updateListing(){
       });
     });
 
+    $('#delete-listing').on('click', function(event){
+      // var currentListing = $(event.target).closest('.job-listing');
+      var listingId = currentListing.data('id');
+      console.log('Deleted ' + listingId);
+      $.ajax({
+        url: apiUrl + listingId,
+        method: 'delete'
+      }).done(function(){
+        currentListing.fadeOut(500, function() {
+          currentListing.remove();
+        });
+      });
+    });
   });
 
 }
@@ -107,3 +120,6 @@ function createNewListing(){
   // append new listing to existing list of jobs
 
 } //end createNewListing
+
+// function deleteListing(){
+// }

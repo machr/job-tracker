@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get '/api/job_listings/:id', to: 'api/job_listings#get_listing_values'
   put '/api/job_listings/:id', to: 'api/job_listings#update_joblisting'
   post 'api/job_listings', to: 'api/job_listings#create_joblisting'
+  delete 'api/job_listings/:id', to: 'api/job_listings#delete_joblisting'
 
   resources :sessions
   post '/session/register', to: 'session#register'
