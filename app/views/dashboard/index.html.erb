@@ -36,15 +36,31 @@
                 <% else %>
                 <span class="tag is-danger is-medium"> <%= remain_weekly_goals %> </span> more jobs to meet your weekly goal.
                 <% end %>
-            </span>
+              </span>
             </h5>
             <small>11:09 PM - 1 Jan 2016</small>
-        </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+<section class="hero is-medium is-primary is-bold">
+  <div class="hero-body">
+    <div class="container">
+      <a href="#">
+        <h1 class="title">
+          Add new listing
+        </h1>
+      </a>
+      <h2 class="subtitle">
+        Primary bold subtitle
+      </h2>
+    </div>
+  </div>
+</section>
+
 
 <!-- attatch template to this -->
 <section class="section dashboard">
@@ -67,10 +83,6 @@
 </section>
 
 <section class="section edit-form-wrap"></section>
-
-
-
-
 
 <!-- Template to edit particular listing  -->
 <script id="edit-listing-template" type="text/x-handlebars-template">
@@ -109,7 +121,7 @@
     <div class="field has-addons">
       <p class="control is-expanded">
         <span class="select is-fullwidth">
-          <select name="input-status" class="input-status">
+          <select name="listing-status" class="listing-status">
             <option value="just-added">Just Added</option>
             <option value="writing-application">Writing Application</option>
             <option value="application-submitted">Application Submitted</option>
