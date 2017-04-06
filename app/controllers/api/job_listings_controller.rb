@@ -35,8 +35,14 @@ class Api::JobListingsController < ApplicationController
     end
   end
 
+  def get_listing_values
+    joblisting_values = JobListing.find_by(id: params[:id])
+    render json: joblisting_values
+  end
+
+
   def update_joblisting
-    joblisting = JobListing.find_by(id: params[:job_id])
+    joblisting = JobListing.find_by(id: params[:id])
     joblisting.position = params[:position]
     joblisting.company = params[:company]
     joblisting.contact = params[:contact]
@@ -45,7 +51,7 @@ class Api::JobListingsController < ApplicationController
     joblisting.url = params[:url]
     if joblisting.save
       #after saving, return a list of all job listings incld updated one
-      render json: User.all.find_by(id: session[:user_id]).job_listings
+      render json: joblisting
     else
       render json: {message: 'Failed to Update Job Listing!'}
     end

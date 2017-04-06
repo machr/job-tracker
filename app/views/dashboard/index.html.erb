@@ -43,69 +43,101 @@
 </section>
 
 <!-- attatch template to this -->
-<section class="section">
+<section class="section dashboard">
   <div class="container">
+    <!-- This is the header row -->
     <div class="columns job-listing">
-        <div class="column is-1">Date Added</div>
-        <div class="column is-2">Position</div>
-        <div class="column is-2">Company</div>
-        <div class="column is-2">Contact</div>
-        <div class="column is-2">Url</div>
-        <div class="column is-2">Notes</div>
-        <div class="column is-1 notification is-success">Status</div>
+      <div class="column is-1">Date Added</div>
+      <div class="column is-2">Position</div>
+      <div class="column is-2">Company</div>
+      <div class="column is-2">Contact</div>
+      <div class="column is-2">Url</div>
+      <div class="column is-2">Notes</div>
+      <div class="column is-1 notification is-success">Status</div>
+    </div>
+
+    <div class="job-listings">
+      <!-- attach template to .job-listings -->
     </div>
   </div>
 </section>
 
-<section class="section">
-  <div class="container job-listings">
-  <!-- attach template to .job-listings -->
-  </div>
+<section class="section edit-form-wrap">
+
 </section>
 
-<section class="section">
-  <div class="container">
-    <div class="columns">
-      <div class="column if-half">
 
-        <div class="field">
-          <label class="label">Positon</label>
-          <p class="control">
-            <input class="input" type="text" placeholder="{{ position }}">
-          </p>
-        </div>
-        <div class="field">
-          <label class="label">Company</label>
-          <p class="control">
-            <input class="input" type="text" placeholder="{{ company }}">
-          </p>
-        </div>
-        <div class="field">
-          <label class="label">Contact</label>
-          <p class="control">
-            <input class="input" type="text" placeholder="{{ contact }}">
-          </p>
-        </div>
-        <div class="field">
-          <label class="label">URL</label>
-          <p class="control">
-            <input class="input" type="text" placeholder="{{ url }}">
-          </p>
-        </div>
 
-      </div>
-      <div class="column if-half">
-        <h1>Activity Log</h1>
-      </div>
+
+
+<!-- Template to edit particular listing  -->
+<script id="edit-listing-template" type="text/x-handlebars-template">
+  <form class="" action="index.html" method="post">
+  <div class="column if-half">
+    <div class="field">
+      <!-- <label class="label">Position</label> -->
+      <p class="control">
+        <input class="input listing-position" type="text" placeholder="{{ position }}" >
+      </p>
     </div>
-  </div>
-</section>
+    <div class="field">
+      <!-- <label class="label">Company</label> -->
+      <p class="control">
+        <input class="input listing-company" type="text" placeholder="{{ company }}" >
+      </p>
+    </div>
+    <div class="field">
+      <!-- <label class="label">Contact</label> -->
+      <p class="control">
+        <input class="input listing-contact" type="text" placeholder="{{ contact }}" >
+      </p>
+    </div>
+    <div class="field">
+      <!-- <label class="label">URL</label> -->
+      <p class="control">
+        <input class="input listing-url" type="text" placeholder="{{ url }}" >
+      </p>
+    </div>
+    <div class="field">
+      <!-- <label class="label">NOTES</label> -->
+      <p class="control">
+        <input class="input listing-notes" type="text" placeholder="{{ notes }}" >
+      </p>
+    </div>
+    <div class="field">
+      <!-- <label class="label">NOTES</label> -->
+      <p class="control">
+        <input class="input listing-status" type="text" placeholder="{{ status }}" >
+      </p>
+    </div>
+    <div class="field">
+      <p class="control">
+        <a id="edit-listing" class="button is-success">Update</a>
+      </p>
+    </div>
+  </form>
 
+
+    <div class="field">
+      <p class="control">
+        <a class="button is-danger">DELETE</a>
+      </p>
+    </div>
+
+  </div> <!-- end Edit Form Template -->
+
+  <!-- <div class="column if-half">
+    <h1>Activity Log</h1>
+  </div> -->
+
+</script>
+
+<!-- Template to show each listing  -->
 <script id="job-listing-template" type="text/x-handlebars-template">
   <div class="columns job-listing" data-id="{{ id }}">
     <div class="column is-1">{{ created_at }}</div>
-    <div class="column is-2">{{ company }}</div>
     <div class="column is-2">{{ position }}</div>
+    <div class="column is-2">{{ company }}</div>
     <div class="column is-2">{{ contact}}</div>
     <div class="column is-2">{{ url }}</div>
     <div class="column is-2">{{ notes }}</div>

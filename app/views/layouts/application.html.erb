@@ -26,9 +26,11 @@
           <% else %>
             <%= form_tag '/session', method: 'post' do %>
               <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-              <label for="">Email</label>
-              <input type="text" name="email">
-              <label for="">Password</label>
+
+              <label for="">email</label>
+              <input type="text" name="email" autofocus>
+              <label for="">password</label>
+              
               <input type="password" name="password">
               <button class="button is-small">Login</button>
             <% end %>
