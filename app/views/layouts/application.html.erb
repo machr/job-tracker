@@ -12,8 +12,9 @@
     <nav class="nav">
       <div class="container">
         <div class="nav-left">
-          <a href="/"><h1>Job Tracker</h1></a>
-          <i class="fa fa-bath" aria-hidden="true"></i>
+
+          <a href="/"><h1 class="title is-2">Job Tracker</h1></a>
+
         </div>
         <div class="nav-right">
           <% if logged_in? %>
@@ -25,11 +26,11 @@
           <% else %>
             <%= form_tag '/session', method: 'post' do %>
               <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-              <label for="">email</label>
+              <label for="">Email</label>
               <input type="text" name="email">
-              <label for="">password</label>
+              <label for="">Password</label>
               <input type="password" name="password">
-              <button>login</button>
+              <button class="button is-small">Login</button>
             <% end %>
           <% end %>
         </div>

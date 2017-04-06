@@ -1,3 +1,22 @@
+.register_container{
+  background-image: url("https://images.pexels.com/photos/64778/pexels-photo-64778.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb");
+  background-size: cover;
+  height: 100vh;
+}
+
+.title {
+  color: black;
+}
+
+.button:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.subtitle {
+  color: black;
+}
+
 .current-user {
   font-weight: 700;
 }

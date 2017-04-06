@@ -7,11 +7,17 @@ Rails.application.routes.draw do
   resources :dashboard
   get '/dashboard', to: 'dashboard#index'
 
+
   resources :sessions
+  post '/session/register', to: 'session#register'
   post '/session', to: 'session#create'
   delete '/session', to: 'session#destroy'
+  get '/session/register', to: 'session#register'
+
 
   get '/register', to: 'pages#register'
+  get '/message', to: 'session#register'
+  post '/register', to: 'session#register'
 
   root 'pages#index'
 end
