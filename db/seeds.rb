@@ -20,7 +20,7 @@ user_array = [u.id,u2.id]
 
 pos = ['Web Developer','Front End Developer', 'Back End Developer','Web Designer', '.Net Developer', 'DevOps Engineer']
 company = ['General Assembly','Web Power Works','Internet Warriors','Keyboard Gladiators', 'The General Store']
-
+status_array = ['Just Added','Writing Application','Application Submitted','Interview / Code Test','Rejected']
 
 11. times do | num |
 
@@ -28,7 +28,7 @@ company = ['General Assembly','Web Power Works','Internet Warriors','Keyboard Gl
   company: "#{company.sample}",
   contact: "1234567",
   notes: "Lorem Ipsum ",
-  status: "Submitted Application",
+  status: status_array.sample,
   url: "www.google.com",
   user_id:user_array.sample})
 
