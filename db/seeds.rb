@@ -1,33 +1,39 @@
+
 JobListing.destroy_all
+JobPosting.destroy_all
+User.destroy_all
 user = User.new
 user.name = "test user"
 user.email = "test@mail.com"
 user.password = "123"
 user.save
 
-use2r = User.new
+user2 = User.new
 user2.name = "test user 2"
 user2.email = "test@mail.com"
 user2.password = "123"
 user2.save
 
 u = User.first
+u2 = User.last
+user_array = [u.id,u2.id]
 
-pos = ['Web Developer','FrontEnd Developer', 'BackEnd Developer','Web Designer']
-company = ['General Assembly','Web Power Works','Internet Warriors']
+pos = ['Web Developer','Front End Developer', 'Back End Developer','Web Designer', '.Net Developer', 'DevOps Engineer']
+company = ['General Assembly','Web Power Works','Internet Warriors','Keyboard Gladiators', 'The General Store']
+status_array = ['Just Added','Writing Application','Application Submitted','Interview / Code Test','Rejected']
 
-
-7. times do | num |
+11. times do | num |
 
   JobListing.create({position: "#{pos.sample}",
   company: "#{company.sample}",
   contact: "1234567",
   notes: "Lorem Ipsum ",
-  status: "Submitted Application",
+  status: status_array.sample,
   url: "www.google.com",
-  user_id:u.id})
+  user_id:user_array.sample})
 
 end
+
 
 job_posting = JobPosting.new
 job_posting.user_id = u.id
@@ -37,8 +43,15 @@ job_posting.url_host = "seek"
 job_posting.save
 
 job_posting = JobPosting.new
-job_posting.user_id = u.id
+job_posting.user_id = u2.id
 job_posting.position = ".NET Web Developer"
 job_posting.url = "http://www.jobg8.com/Application.aspx?zVGuCV2i1IogSO%2bJPenWBgc&Language=3081"
 job_posting.url_host = "jobg8"
+job_posting.save
+
+job_posting = JobPosting.new
+job_posting.user_id = u2.id
+job_posting.position = "Full Stack Web Developer PHP"
+job_posting.url = "http://www.jobg8.com/Application.aspx?zVGuCV2i1IogSO%2bJPenWBgc&Language=3081"
+job_posting.url_host = "seek"
 job_posting.save

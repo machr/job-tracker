@@ -2,44 +2,42 @@
   <div class="container">
     <div class="columns">
       <div class="column">
-        <div class="content">
+        <div class="content notification">
+          <button class="delete is-medium"></button>
           <h2>Your Job Diary</h2>
           <div class="box">
-            <h4>Today</h4>
+            <!-- <h4>Today</h4> -->
             <h5 class="notification">
-              <button class="delete is-small"></button>
               <span class="tag is-light is-medium">
-                You have added <%= current_user_daily_job_listing_num %>
+                Daily - You have submitted <%= current_user_daily_job_listing_applied_num %>
                 job application(s),
-                <% if current_user_daily_job_listing_num.to_i >= 5 %>
+                <% if current_user_weekly_job_listing_applied_num.to_i >= 5 %>
                 You have met your daily goal of <span class="tag is-success is-medium"> 5 </span> job applications.
                 <% else %>
                 <span class="tag is-danger is-medium"> <%= remain_daily_goals%> </span> more jobs to meet your daily goal
                 <% end %>
-            </span>
+              </span>
             </h5>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-            <a>#css</a> <a>#responsive</a>
-            <br>
-          </div>
-          <hr>
-          <div class="box">
-            <h4>This Week</h4>
+            <!-- <h4>This Week</h4> -->
             <h5 class="notification">
               <span class="tag is-light is-medium">
-                <button class="delete is-small"></button>
-                You have added <%= current_user_weekly_job_listing_num %>
+                Weekly - You have submitted <%= current_user_weekly_job_listing_applied_num %>
                 job application(s),
-                <% if current_user_daily_job_listing_num.to_i >= 35 %>
+                <% if current_user_weekly_job_listing_applied_num.to_i >= 35 %>
                 You have met your weekly goal of <span class="tag is-success is-medium"> 35 </span> job applications.
                 <% else %>
                 <span class="tag is-danger is-medium"> <%= remain_weekly_goals %> </span> more jobs to meet your weekly goal.
                 <% end %>
               </span>
             </h5>
-            <small>11:09 PM - 1 Jan 2016</small>
+            <h5 class="notification">
+              <span class="tag is-light is-medium">
+                Pending Applications - You have <span class="tag is-warning is-medium"> <%= current_user_pending_applications_num %> </span>job listing(s) that you have not applied for yet.
+              </span>
+            </h5>
+            <small>Last Application Submitted on 11:09 PM - 6 April 2017</small>
           </div>
+          <hr>
         </div>
       </div>
     </div>
@@ -180,11 +178,11 @@
       <p class="control is-expanded">
         <span class="select is-fullwidth">
           <select name="listing-status" class="listing-status">
-            <option value="just-added">Just Added</option>
-            <option value="writing-application">Writing Application</option>
-            <option value="application-submitted">Application Submitted</option>
-            <option value="interview-codetest">Interview / Code Test</option>
-            <option value="rejected">Rejected</option>
+            <option value="Just Added">Just Added</option>
+            <option value="Writing Application">Writing Application</option>
+            <option value="Application Submitted">Application Submitted</option>
+            <option value="Interview / Code Test">Interview / Code Test</option>
+            <option value="Rejected">Rejected</option>
           </select>
         </span>
       </p>
@@ -236,6 +234,6 @@
 
 <script type="text/javascript">
   $(".delete").on( "click", function(event) {
-  $(event.target).closest(".box").fadeOut( "slow" );
+  $(event.target).closest(".notification").fadeOut( "slow" );
   });
 </script>

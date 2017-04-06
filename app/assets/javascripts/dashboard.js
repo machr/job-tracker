@@ -8,6 +8,9 @@ function getDashboardListings(){
   function renderIndex(listings){
     // console.log(listings);
     listings.forEach(function(listing){
+      var x = new Date(listing.created_at);
+      var fullDate = x.getDate() + " / " + (x.getMonth()+1) + " / " + x.getFullYear();
+      listing.created_at = fullDate;
       var html = jobListingTemplate(listing);
       $('.job-listings').append(html);
     });
@@ -53,6 +56,10 @@ function updateListing(){
         method: 'PUT'
       }).done(function(listing){
         // console.log(listingId);
+        //format date to dd/mm/yyyy
+        var x = new Date(listing.created_at);
+        var fullDate = x.getDate() + " / " + (x.getMonth()+1) + " / " + x.getFullYear();
+        listing.created_at = fullDate;
 
         // find child element in .job-listings that has a matching data-id
         var $jobListings = $('.job-listings');
