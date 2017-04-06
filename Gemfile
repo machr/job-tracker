@@ -22,7 +22,7 @@ gem 'coffee-rails', '~> 4.2'
 # gem 'therubyracer', platforms: :ruby
 
 # Font Awesome Gem
-gem 'font-awesome-sass'  
+gem 'font-awesome-sass'
 # Used to extract domain name from URL tool
 gem 'domainatrix'
 

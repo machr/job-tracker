@@ -81,7 +81,7 @@ function updateListing(){
         url: apiUrl + listingId,
         method: 'delete'
       }).done(function(){
-        currentListing.fadeOut(500, function() {
+        currentListing.fadeOut(250, function() {
           currentListing.remove();
         });
       });
