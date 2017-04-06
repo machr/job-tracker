@@ -24,6 +24,7 @@ function updateListing(){
   $('.job-listings').on('click', '.job-listing', function(event){
     var currentListing = $(event.target).closest('.job-listing');
     var listingId = currentListing.data('id');
+    // $('.edit-form-wrap').addClass('show');
 
     console.log(listingId);
     $.ajax({
@@ -57,17 +58,12 @@ function updateListing(){
         // find child element in .job-listings that has a matching data-id
         var $jobListings = $('.job-listings');
         // console.log($jobListings);
-        var $donkey = $('[data-id=' + listingId + ']');
-        // console.log(donkey);
+        var $currentlistingElement = $('[data-id=' + listingId + ']');
+        // console.log(currentlistingElement);
         // change values to ajax response in child element
         var jobListingTemplate = Handlebars.compile( $('#job-listing-template').html() );
         var updatedListing = jobListingTemplate(listing);
-        $donkey.replaceWith(updatedListing);
-
-        // ???
-
-        // Profit
-
+        $currentlistingElement.replaceWith(updatedListing);
       });
     });
 
