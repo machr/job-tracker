@@ -1,5 +1,6 @@
 var apiUrl = '/api/job_listings/';
 
+// Callbacks are in App.js
 function getDashboardListings(){
   var jobListingTemplate = Handlebars.compile( $('#job-listing-template').html() );
   $.ajax({ url: apiUrl }).done(renderIndex);
@@ -13,7 +14,6 @@ function getDashboardListings(){
   }
 }
 
-
 function updateListing(){
   // Grab editListing template and append it to edit-form-wrap
   var editListingTemplate = Handlebars.compile( $('#edit-listing-template').html());
@@ -24,7 +24,6 @@ function updateListing(){
   $('.job-listings').on('click', '.job-listing', function(event){
     var currentListing = $(event.target).closest('.job-listing');
     var listingId = currentListing.data('id');
-    // $('.edit-form-wrap').addClass('show');
 
     console.log(listingId);
     $.ajax({
@@ -70,4 +69,41 @@ function updateListing(){
   });
 
 }
-// Callbacks are in App.js
+
+function createNewListing(){
+  // get handlebar tempalte for creating, and appending it too page
+  var createListingTemplate = Handlebars.compile( $('#create-listing-template').html());
+  var compiledTemplate = createListingTemplate();
+  $('.create-listing-wrap').append(compiledTemplate);
+
+  $('#add-listing').on('click', function(event) {
+    event.preventDefault();
+    console.log('Add listing clicked');
+      $.ajax({
+        url: apiUrl,
+        method: 'post',
+        data: {
+          position: $('.create-listing-position').val(),
+          company: $('.create-listing-company').val(),
+          contact: $('.create-listing-contact').val(),
+          url: $('.create-listing-url').val(),
+          notes: $('.create-listing-notes').val(),
+          status: $('.create-listing-status').val()
+        }
+      }). done( function(newListing) {
+        console.log(newListing);
+
+        var createListingTemplate = Handlebars.compile( $('#job-listing-template').html());
+        var compiledTemplate = createListingTemplate(newListing);
+        $('.job-listings').prepend(compiledTemplate);
+
+        $('#create-listing-form').trigger("reset");
+      }); // End .done
+    }); // End create-card-action click handler
+
+
+  // Make api call to create new listing
+
+  // append new listing to existing list of jobs
+
+} //end createNewListing
