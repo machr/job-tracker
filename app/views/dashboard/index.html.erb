@@ -66,50 +66,57 @@
 
 </section>
 
+
+
+
+
 <!-- Template to edit particular listing  -->
 <script id="edit-listing-template" type="text/x-handlebars-template">
+  <form class="" action="index.html" method="post">
   <div class="column if-half">
     <div class="field">
       <!-- <label class="label">Position</label> -->
       <p class="control">
-        <input class="input" type="text" placeholder="{{ position }}" class="listing-position">
+        <input class="input listing-position" type="text" placeholder="{{ position }}" >
       </p>
     </div>
     <div class="field">
       <!-- <label class="label">Company</label> -->
       <p class="control">
-        <input class="input" type="text" placeholder="{{ company }}" class="listing-company">
+        <input class="input listing-company" type="text" placeholder="{{ company }}" >
       </p>
     </div>
     <div class="field">
       <!-- <label class="label">Contact</label> -->
       <p class="control">
-        <input class="input" type="text" placeholder="{{ contact }}" class="listing-contact">
+        <input class="input listing-contact" type="text" placeholder="{{ contact }}" >
       </p>
     </div>
     <div class="field">
       <!-- <label class="label">URL</label> -->
       <p class="control">
-        <input class="input" type="text" placeholder="{{ url }}" class="listing-url">
+        <input class="input listing-url" type="text" placeholder="{{ url }}" >
       </p>
     </div>
     <div class="field">
       <!-- <label class="label">NOTES</label> -->
       <p class="control">
-        <input class="input" type="text" placeholder="{{ url }}" class="listing-notes">
+        <input class="input listing-notes" type="text" placeholder="{{ notes }}" >
       </p>
     </div>
     <div class="field">
       <!-- <label class="label">NOTES</label> -->
       <p class="control">
-        <input class="input" type="text" placeholder="{{ url }}" class="listing-notes">
+        <input class="input listing-status" type="text" placeholder="{{ status }}" >
       </p>
     </div>
     <div class="field">
       <p class="control">
-        <a class="button is-success">Update</a>
+        <a id="edit-listing" class="button is-success">Update</a>
       </p>
     </div>
+  </form>
+
 
     <div class="field">
       <p class="control">
