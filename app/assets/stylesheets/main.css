@@ -118,9 +118,11 @@
   text-align: center;
 }
 
+.notification .tag {
+  margin: 0 0.34em
+
 .status-black{
   background-color:whitesmoke;
-
 }
 
 .status-red{
