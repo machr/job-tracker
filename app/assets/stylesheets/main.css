@@ -117,3 +117,7 @@
   margin-bottom: 1em;
   text-align: center;
 }
+
+.notification .tag {
+  margin: 0 0.34em
+}
