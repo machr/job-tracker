@@ -1,5 +1,6 @@
 <section class="section hero is-primary is-medium index_container">
-  <div class="columns">
+  <div class="container">
+    <div class="columns front-page">
     <div class="column is-half">
       <h1 class="title is-2">Jobs posted by your peers</h1>
       <table class="table job-ads">
@@ -17,8 +18,7 @@
     </div>
     <% if !logged_in? %>
       <div class="column is-half ">
-          <div class="columns ">
-            <div class="column is-half" style="margin:0 auto;margin-left:2em;">
+            <div class="">
               <h1 class="title is-2">Registration Form</h1>
               <%= form_tag '/session/register', method: 'post' do %>
               <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
@@ -43,9 +43,10 @@
               <button class="button is-medium is-info" id="register" name="button">Sign up for Job Tracker </button>
               <% end %>
             </div>
-          </div>
+
       </div>
     <% end %>
+  </div>
   </div>
 
 <script id="job-posting-template" type="text/x-handlebars-template">
