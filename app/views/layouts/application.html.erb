@@ -9,7 +9,7 @@
   </head>
 
   <body>
-    <nav class="nav">
+    <nav class="nav has-shadow">
       <div class="container">
         <div class="nav-left">
 
@@ -26,13 +26,25 @@
           <% else %>
             <%= form_tag '/session', method: 'post' do %>
               <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-
-              <label for="">email</label>
-              <input type="text" name="email" autofocus>
-              <label for="">password</label>
-              
-              <input type="password" name="password">
-              <button class="button is-small">Login</button>
+              <div class="field is-horizontal login-form">
+                <div class="field is-grouped">
+                  <p class="control is-expanded">
+                    <!-- <label for="">email</label> -->
+                    <input class="input" type="text" name="email" placeholder="Email" autofocus>
+                  </p>
+                </div>
+                    <!-- <label for="">password</label> -->
+                <div class="field is-grouped">
+                  <p class="control is-expanded">
+                    <input class="input" type="password" name="password" placeholder="Password">
+                  </p>
+                </div>
+                <div class="field is-grouped">
+                  <p class="control is-expanded">
+                    <button class="button is-small">Login</button>
+                  </p>
+                </div>
+              </div>
             <% end %>
           <% end %>
         </div>

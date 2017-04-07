@@ -43,8 +43,11 @@
   transform: translateY(0%);
 }
 
-.action-button {
-  /*margin-bottom: 1em;*/
+.front-page {
+  justify-content: space-between;
+}
+.front-page .is-half {
+  width: 45%;
 }
 
 .line {
@@ -87,7 +90,32 @@
 .fa.add-plus {
   vertical-align: middle;
   margin-left: 1em;
+}
 
+.login-form, .nav-left {
+  display: flex;
+  align-items: center;
+}
+
+.nav-right{
+  padding: 1em;
+}
+
+.nav-right .field {
+  margin-bottom: 0;
+}
+
+.nav-right button {
+  margin-left: 1em;
+}
+
+.hero .title:not(:last-child) {
+  margin-bottom: 0;
+}
+
+.front-page .is-half .title {
+  margin-bottom: 1em;
+  text-align: center;
 }
 
 .status-black{
