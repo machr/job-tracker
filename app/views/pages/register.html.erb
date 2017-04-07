@@ -2,10 +2,7 @@
   <div class="container has-text-centered">
     <div class="columns">
       <div class="column is-half is-offset-one-quarter">
-
         <h1 class="title is-2">Registration Form</h1>
-
-
         <%= form_tag '/session/register', method: 'post' do %>
         <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 

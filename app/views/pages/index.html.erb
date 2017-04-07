@@ -1,43 +1,79 @@
-<section class="section">
-  <div class="container">
-    <div class="columns job-listing">
-        <div class="column is-2">Date Added</div>
-        <div class="column is-4">Position</div>
-        <div class="column is-2">Posted By</div>
+<section class="section register_container ">
+  <div class="columns">
+    <div class="column is-half">
+      <table class="table" style="width:80%; margin:0 auto;">
+        <thead>
+          <tr style="font-size:1em;">
+            <th><abbr title="JobAd">No.</abbr></th>
+            <th>Date Posted</th>
+            <th><abbr title="Position">Position</abbr></th>
+            <th><abbr title="Played">Posted By</abbr></th>
+          </tr>
+        </thead>
+        <tbody class="job-listings">
+        </tbody>
+      </table>
+    </div>
+    <div class="column is-half ">
+        <div class="columns ">
+          <div class="column is-half" style="margin:0 auto;">
+            <h1 class="title is-2">Registration Form</h1>
+            <%= form_tag '/session/register', method: 'post' do %>
+            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+            <div class="field">
+              <p class="control">
+                <label for=""></label>
+                <input class="input is-medium" class="input is-success" name="name" required type="text" placeholder="Your display name">
+              </p>
+            </div>
+            <div class="field">
+              <p class="control">
+                <label for=""></label>
+                <input class="input is-medium" name="email" required type="email" placeholder="Your email address">
+              </p>
+            </div>
+            <div class="field">
+              <p class="control">
+                <label for=""></label>
+                <input class="input is-medium" id="password" name="password" required type="password" placeholder="Create a password">
+              </p>
+            </div>
+            <button class="button is-medium is-info" id="register" name="button">Sign up for Job Tracker </button>
+            <% end %>
+          </div>
+        </div>
     </div>
   </div>
-</section>
-
-<section class="section">
-  <div class="container job-listings">
-  <!-- attach template to .job-listings -->
-  </div>
-</section>
 
 <script id="job-posting-template" type="text/x-handlebars-template">
-  <div class="columns job-listing" data-id="{{ id }}">
-    <div class="column is-2">{{ created_at }}</div>
-    <div class="column is-4"><a href=" {{ url }} ">{{ position }}</a> ( {{ url_host }} )</div>
-    <div class="column is-2">{{ user.name }}</div>
-  </div>
+  <tr>
+    <th>{{ count }}</th>
+    <td>07 / 04 / 2017</td>
+    <td style="font-size:1.5em;"> <a href="{{ url }}"> {{ position }} </a> ( {{ url_host }} )</td>
+    <td> {{ user.name }} </td>
+  </tr>
 </script>
 
 <script type="text/javascript">
-
 function JobPostingsIndex(){
   var apiUrl = '/api/job_postings';
   var jobListingTemplate = Handlebars.compile( $('#job-posting-template').html() );
   $.ajax({ url: apiUrl }).done(renderIndex);
   function renderIndex(listings){
+    //hard coded a test number
+    var count = 1;
     listings.forEach(function(listing){
+      listing["count"] = count;
       var x = new Date(listing.created_at);
       var fullDate = x.getDate() + " / " + (x.getMonth()+1) + " / " + x.getFullYear();
       listing.created_at = fullDate;
       var html = jobListingTemplate(listing);
       $('.job-listings').append(html);
+      count++;
     });
   }
 }
+
 $(document).ready(function() {
   // Callback to Handlebar function
   JobPostingsIndex();
