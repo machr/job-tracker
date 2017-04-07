@@ -27,6 +27,11 @@ function updateListing(){
   $('.job-listings').on('click', '.job-listing', function(event){
     var currentListing = $(event.target).closest('.job-listing');
     var listingId = currentListing.data('id');
+    $('.edit-form-wrap').addClass('show');
+
+    $('.edit-form-wrap').on('click', '.delete', function(event) {
+      $('.edit-form-wrap').removeClass('show');
+    });
 
     console.log(listingId);
     $.ajax({
@@ -127,6 +132,3 @@ function createNewListing(){
   // append new listing to existing list of jobs
 
 } //end createNewListing
-
-// function deleteListing(){
-// }
