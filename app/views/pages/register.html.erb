@@ -10,30 +10,42 @@
         <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 
         <div class="field">
-          <p class="control">
+          <p class="control has-icon">
             <label for=""></label>
             <input class="input is-medium" class="input is-success" name="name" required type="text" placeholder="Enter Username">
+            <span class="icon is-medium">
+            <i class="fa fa-user-o"></i>
+            </span>
           </p>
         </div>
 
         <div class="field">
-          <p class="control">
+          <p class="control has-icon">
             <label for=""></label>
             <input class="input is-medium" name="email" required type="email" placeholder="Enter Email address">
+            <span class="icon is-medium">
+            <i class="fa fa-envelope-o"></i>
+            </span>
           </p>
         </div>
 
         <div class="field">
-          <p class="control">
+          <p class="control has-icon">
             <label for=""></label>
             <input class="input is-medium" id="password" name="password" required type="password" placeholder="Enter Password">
+            <span class="icon is-medium">
+            <i class="fa fa-unlock-alt"></i>
+            </span>
           </p>
         </div>
 
         <div class="field">
-          <p class="control">
+          <p class="control has-icon">
             <label for=""></label>
             <input class="input is-medium" id="confirm_password" name="confirm_password"  required type="password" placeholder="Confirm Password">
+            <span class="icon is-medium">
+            <i class="fa fa-unlock"></i>
+            </span>
           </p>
         </div>
         <button class="button is-medium" id="register" name="button">Register</button>

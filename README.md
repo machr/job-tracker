@@ -49,8 +49,21 @@ After we have all the components and ideas of how our website would look like, w
 
 * Seedfile status not in sync between team members' files.
 
-* Few bugs was found when updating job listing record.
-
 * Limited time to include admin login so that admin can view jobs that the clients have applied for.
+
+* Date format of the new added job in job listing is not the same format as the other jobs in the currrent listing until user refresh page.
+
+* If user changed his/her decision after updating job status and decided to delete it instead, user need to refresh page to see that job has been deleted from listing.
+
+* Last application submitted time/date format doesn't update.
+
+* Need to refresh page in order to get an update of Your Job Diary daily/weekly/pending applications.
+
+* Website is not in scope for mobile optimization.
+
+* If add more than 5 jobs daily, it intermittently resets your daily job target at times and randomly creates duplicate jobs in your joblisting.
+
+
+
 
 :tada: :tada: :tada: :tada::tada: :tada::tada: :tada::tada: :tada::tada: :tada::tada: :tada::tada: :tada::tada: :tada::tada: :tada::tada: :tada::tada:
