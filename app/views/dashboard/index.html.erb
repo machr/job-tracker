@@ -136,77 +136,75 @@
   </div>
 </section>
 
-<section class="section edit-form-wrap"></section>
+<section class="section edit-form-wrap">
+  <a class="delete is-large "></a>
+</section>
 
 <!-- Template to edit particular listing  -->
 <script id="edit-listing-template" type="text/x-handlebars-template">
   <form class="" action="index.html" method="post">
-  <div class="column if-half">
-    <div class="field">
-      <!-- <label class="label">Position</label> -->
-      <p class="control">
-        <input class="input listing-position" type="text" placeholder="{{ position }}" >
-      </p>
-    </div>
-    <div class="field">
-      <!-- <label class="label">Company</label> -->
-      <p class="control">
-        <input class="input listing-company" type="text" placeholder="{{ company }}" >
-      </p>
-    </div>
-    <div class="field">
-      <!-- <label class="label">Contact</label> -->
-      <p class="control">
-        <input class="input listing-contact" type="text" placeholder="{{ contact }}" >
-      </p>
-    </div>
-    <div class="field">
-      <!-- <label class="label">URL</label> -->
-      <p class="control">
-        <input class="input listing-url" type="text" placeholder="{{ url }}" >
-      </p>
-    </div>
-    <div class="field">
-      <!-- <label class="label">NOTES</label> -->
-      <p class="control">
-        <input class="input listing-notes" type="text" placeholder="{{ notes }}" >
-      </p>
-    </div>
-    <div class="field has-addons">
-      <p class="control is-expanded">
-        <span class="select is-fullwidth">
-          <select name="listing-status" class="listing-status">
-            <option value="Just Added">Just Added</option>
-            <option value="Writing Application">Writing Application</option>
-            <option value="Application Submitted">Application Submitted</option>
-            <option value="Interview / Code Test">Interview / Code Test</option>
-            <option value="Rejected">Rejected</option>
-          </select>
-        </span>
-      </p>
-    </div>
+    <div class="columns">
+      <div class="field column">
+        <label class="label">Position</label>
+        <p class="control">
+          <input class="input listing-position" type="text" placeholder="">
+        </p>
+      </div>
+      <div class="field column">
+        <label class="label">Company</label>
+        <p class="control">
+          <input class="input listing-company" type="text" placeholder="">
+        </p>
+      </div>
+      <div class="field column">
+        <label class="label">Contact</label>
+        <p class="control">
+          <input class="input listing-contact" type="text" placeholder="">
+        </p>
+      </div>
+      <div class="field column">
+        <label class="label">URL</label>
+        <p class="control">
+          <input class="input listing-url" type="text" placeholder="">
+        </p>
+      </div>
+      <div class="field column is-2">
+        <label class="label">NOTES</label>
+        <p class="control">
+          <input class="input listing-notes" type="text" placeholder="">
+        </p>
+      </div>
+      <div class="field column">
+        <label class="label">Status</label>
+        <p class="control">
+          <span class="select">
+            <select name="listing-status" class="listing-status">
+              <option value="Just Added">Just Added</option>
+              <option value="Writing Application">Writing Application</option>
+              <option value="Application Submitted">Application Submitted</option>
+              <option value="Interview / Code Test">Interview / Code Test</option>
+              <option value="Rejected">Rejected</option>
+            </select>
+          </span>
+        </p>
+      </div>
 
-    <div class="field">
-      <p class="control">
-        <a id="edit-listing" class="button is-success">Update</a>
-      </p>
+      <div class="field column is-1">
+        <p class="control action-button">
+          <a id="delete-listing" class="button is-danger">DELETE</a>
+        </p>
+          <span class="line"></span>
+        <p class="control">
+          <a id="edit-listing" class="button is-success">Update</a>
+        </p>
+      </div>
     </div>
   </form>
 
-
-    <div class="field">
-      <p class="control">
-        <a id="delete-listing" class="button is-danger">DELETE</a>
-      </p>
-    </div>
-
   </div> <!-- end Edit Form Template -->
-
-  <!-- <div class="column if-half">
-    <h1>Activity Log</h1>
-  </div> -->
-
 </script>
+
+
 
 <!-- Template to show each listing  -->
 <script id="job-listing-template" type="text/x-handlebars-template">
