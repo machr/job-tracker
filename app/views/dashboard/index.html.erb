@@ -42,20 +42,24 @@
       </div>
     </div>
   </div>
+
+<span class="tag is-dark">Just Added</span>
+<span class="tag is-info">Application Submitted</span>
+<span class="tag is-success">Interview / Code Test</span>
+<span class="tag is-warning">Writing Application</span>
+<span class="tag is-danger">Rejected</span>
 </section>
 
-<section class="hero is-primary is-bold">
+<section class="hero is-medium is-primary is-bold">
   <div class="hero-body">
+    <div class="container create-listing-wrap">
+      <a href="#">
+        <h1 class="title">
+          Add new listing
+        </h1>
+      </a>
 
-
-    <div class="container">
-
-      <h1 class="title add-listing-btn">
-        Add new listing <i class="fa fa-plus add-plus " aria-hidden="true"></i>
-      </h1>
-
-      <div class="create-listing-wrap">
-        <script id="create-listing-template" type="text/x-handlebars-template">
+      <script id="create-listing-template" type="text/x-handlebars-template">
         <form id="create-listing-form">
         <div class="column if-half">
           <div class="field">
@@ -93,11 +97,11 @@
               <label class="label">Current Status</label>
               <span class="select is-fullwidth">
                 <select name="create-listing-status" class="create-listing-status">
-                  <option value="Just Added">Just Added</option>
-                  <option value="Writing Application">Writing Application</option>
-                  <option value="Application Submitted">Application Submitted</option>
-                  <option value="Interview / Code Test">Interview / Code Test</option>
-                  <option value="Rejected">Rejected</option>
+                  <option value="just-added">Just Added</option>
+                  <option value="writing-application">Writing Application</option>
+                  <option value="application-submitted">Application Submitted</option>
+                  <option value="interview-codetest">Interview / Code Test</option>
+                  <option value="rejected">Rejected</option>
                 </select>
               </span>
             </p>
@@ -112,7 +116,7 @@
           </div>
         </form>
       </script>
-      </div>
+
     </div>
   </div>
 </section>
@@ -217,7 +221,7 @@
     <div class="column is-2">{{ contact}}</div>
     <div class="column is-2">{{ url }}</div>
     <div class="column is-2">{{ notes }}</div>
-    <div class="column notification is-1 is-success">{{ status }}</div>
+    <div class="column status">{{ status }}</div>
   </div>
 </script>
 

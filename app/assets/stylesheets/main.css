@@ -89,3 +89,22 @@
   margin-left: 1em;
 
 }
+
+.status-black{
+  background-color:whitesmoke;
+
+}
+
+.status-red{
+  background-color:#ff3860;
+}
+
+.status-submited{
+  background-color:#3273dc;
+  color: white;
+}
+
+.status-warning{
+  background-color:#ffdd57;
+  color: white;
+}

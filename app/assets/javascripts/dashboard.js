@@ -4,15 +4,33 @@ var apiUrl = '/api/job_listings/';
 function getDashboardListings(){
   var jobListingTemplate = Handlebars.compile( $('#job-listing-template').html() );
   $.ajax({ url: apiUrl }).done(renderIndex);
-
   function renderIndex(listings){
     // console.log(listings);
     listings.forEach(function(listing){
       var x = new Date(listing.created_at);
       var fullDate = x.getDate() + " / " + (x.getMonth()+1) + " / " + x.getFullYear();
       listing.created_at = fullDate;
-      var html = jobListingTemplate(listing);
-      $('.job-listings').append(html);
+      var color = ""
+      switch(listing.status){
+        case "Application Submitted":
+        color = "status-submited";
+        break;
+
+        case "Just Added":
+        color = "status-black";
+        break;
+
+        case "Rejected":
+        color = "status-red"
+        break;
+
+        default:
+        break;
+      }
+      // var html = $(jobListingTemplate(listing)).children('.status').addClass(color);
+      var $html = $(jobListingTemplate(listing));
+      $html.find('.status').addClass(color);
+      $('.job-listings').append($html);
     });
   }
 }
