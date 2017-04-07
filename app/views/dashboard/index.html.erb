@@ -44,8 +44,9 @@
   </div>
 </section>
 
-<section class="hero is-primary is-bold">
+<section class="hero is-medium is-primary is-bold">
   <div class="hero-body">
+
     <div class="container">
 
       <h1 class="title add-listing-btn">
@@ -91,11 +92,11 @@
               <label class="label">Current Status</label>
               <span class="select is-fullwidth">
                 <select name="create-listing-status" class="create-listing-status">
-                  <option value="Just Added">Just Added</option>
-                  <option value="Writing Application">Writing Application</option>
-                  <option value="Application Submitted">Application Submitted</option>
-                  <option value="Interview / Code Test">Interview / Code Test</option>
-                  <option value="Rejected">Rejected</option>
+                  <option value="just-added">Just Added</option>
+                  <option value="writing-application">Writing Application</option>
+                  <option value="application-submitted">Application Submitted</option>
+                  <option value="interview-codetest">Interview / Code Test</option>
+                  <option value="rejected">Rejected</option>
                 </select>
               </span>
             </p>
@@ -215,7 +216,7 @@
     <div class="column is-2">{{ contact}}</div>
     <div class="column is-2">{{ url }}</div>
     <div class="column is-2">{{ notes }}</div>
-    <div class="column notification is-1 is-success">{{ status }}</div>
+    <div class="column status">{{ status }}</div>
   </div>
 </script>
 
