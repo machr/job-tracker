@@ -1,9 +1,10 @@
-<section class="section register_container ">
+<section class="section hero is-primary is-medium index_container">
   <div class="columns">
     <div class="column is-half">
-      <table class="table" style="width:80%; margin:0 auto;">
+      <h1 class="title is-2">Jobs posted by your peers</h1>
+      <table class="table job-ads">
         <thead>
-          <tr style="font-size:1em;">
+          <tr>
             <th><abbr title="JobAd">No.</abbr></th>
             <th>Date Posted</th>
             <th><abbr title="Position">Position</abbr></th>
@@ -14,42 +15,44 @@
         </tbody>
       </table>
     </div>
-    <div class="column is-half ">
-        <div class="columns ">
-          <div class="column is-half" style="margin:0 auto;">
-            <h1 class="title is-2">Registration Form</h1>
-            <%= form_tag '/session/register', method: 'post' do %>
-            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-            <div class="field">
-              <p class="control">
-                <label for=""></label>
-                <input class="input is-medium" class="input is-success" name="name" required type="text" placeholder="Your display name">
-              </p>
+    <% if !logged_in? %>
+      <div class="column is-half ">
+          <div class="columns ">
+            <div class="column is-half" style="margin:0 auto;margin-left:2em;">
+              <h1 class="title is-2">Registration Form</h1>
+              <%= form_tag '/session/register', method: 'post' do %>
+              <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+              <div class="field">
+                <p class="control">
+                  <label for=""></label>
+                  <input class="input is-medium" class="input is-success" name="name" required type="text" placeholder="Your display name">
+                </p>
+              </div>
+              <div class="field">
+                <p class="control">
+                  <label for=""></label>
+                  <input class="input is-medium" name="email" required type="email" placeholder="Your email address">
+                </p>
+              </div>
+              <div class="field">
+                <p class="control">
+                  <label for=""></label>
+                  <input class="input is-medium" id="password" name="password" required type="password" placeholder="Create a password">
+                </p>
+              </div>
+              <button class="button is-medium is-info" id="register" name="button">Sign up for Job Tracker </button>
+              <% end %>
             </div>
-            <div class="field">
-              <p class="control">
-                <label for=""></label>
-                <input class="input is-medium" name="email" required type="email" placeholder="Your email address">
-              </p>
-            </div>
-            <div class="field">
-              <p class="control">
-                <label for=""></label>
-                <input class="input is-medium" id="password" name="password" required type="password" placeholder="Create a password">
-              </p>
-            </div>
-            <button class="button is-medium is-info" id="register" name="button">Sign up for Job Tracker </button>
-            <% end %>
           </div>
-        </div>
-    </div>
+      </div>
+    <% end %>
   </div>
 
 <script id="job-posting-template" type="text/x-handlebars-template">
   <tr>
     <th>{{ count }}</th>
     <td>07 / 04 / 2017</td>
-    <td style="font-size:1.5em;"> <a href="{{ url }}"> {{ position }} </a> ( {{ url_host }} )</td>
+    <td> <a href="{{ url }}"> {{ position }} </a> ( {{ url_host }} )</td>
     <td> {{ user.name }} </td>
   </tr>
 </script>
