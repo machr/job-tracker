@@ -15,7 +15,6 @@
 //= require turbolinks
 //= require 'handlebars'
 
-//= require 'validation'
 //= require 'dashboard'
 
 //= require 'app'

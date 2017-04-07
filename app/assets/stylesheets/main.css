@@ -1,6 +1,6 @@
-.register_container{
-  background-image: url("https://images.pexels.com/photos/64778/pexels-photo-64778.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb");
-  background-size: cover;
+.index_container{
+  /*background-image: url("https://images.pexels.com/photos/64778/pexels-photo-64778.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb");
+  background-size: cover;*/
   height: 100vh;
 }
 
@@ -66,6 +66,15 @@
   background-color: rgba(10, 10, 10, 0.5);
 }
 
+.job-ads{
+  font-size:1.1em;
+  border-radius: 25px;
+}
+
+.job-ads td{
+  padding:1em;
+}
+
 .add-listing-btn {
   display: block;
   cursor: pointer;
@@ -78,4 +87,5 @@
 .fa.add-plus {
   vertical-align: middle;
   margin-left: 1em;
+
 }
