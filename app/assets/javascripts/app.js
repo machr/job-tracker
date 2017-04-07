@@ -5,5 +5,10 @@ $(document).ready(function() {
     updateListing();
     createNewListing();
     // deleteListing();
+
+    $('.add-listing-btn').on('click', function(event){
+      event.preventDefault();
+      $('.create-listing-wrap').slideToggle(300);
+    });
   }
 });

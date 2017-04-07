@@ -44,16 +44,18 @@
   </div>
 </section>
 
-<section class="hero is-medium is-primary is-bold">
+<section class="hero is-primary is-bold">
   <div class="hero-body">
-    <div class="container create-listing-wrap">
-      <a href="#">
-        <h1 class="title">
-          Add new listing
-        </h1>
-      </a>
 
-      <script id="create-listing-template" type="text/x-handlebars-template">
+
+    <div class="container">
+
+      <h1 class="title add-listing-btn">
+        Add new listing <i class="fa fa-plus add-plus " aria-hidden="true"></i>
+      </h1>
+
+      <div class="create-listing-wrap">
+        <script id="create-listing-template" type="text/x-handlebars-template">
         <form id="create-listing-form">
         <div class="column if-half">
           <div class="field">
@@ -110,7 +112,7 @@
           </div>
         </form>
       </script>
-
+      </div>
     </div>
   </div>
 </section>

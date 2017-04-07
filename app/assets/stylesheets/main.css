@@ -65,3 +65,17 @@
 .edit-form-wrap .delete:hover {
   background-color: rgba(10, 10, 10, 0.5);
 }
+
+.add-listing-btn {
+  display: block;
+  cursor: pointer;
+}
+
+.create-listing-wrap {
+  display: none;
+}
+
+.fa.add-plus {
+  vertical-align: middle;
+  margin-left: 1em;
+}
