@@ -125,10 +125,4 @@ function createNewListing(){
         $('#create-listing-form').trigger("reset");
       }); // End .done
     }); // End create-card-action click handler
-
-
-  // Make api call to create new listing
-
-  // append new listing to existing list of jobs
-
 } //end createNewListing
