@@ -7,32 +7,40 @@ function getDashboardListings(){
   function renderIndex(listings){
     // console.log(listings);
     listings.forEach(function(listing){
-      var x = new Date(listing.created_at);
-      var fullDate = x.getDate() + " / " + (x.getMonth()+1) + " / " + x.getFullYear();
-      listing.created_at = fullDate;
-      var color = ""
-      switch(listing.status){
-        case "Application Submitted":
-        color = "status-submited";
-        break;
-
-        case "Just Added":
-        color = "status-black";
-        break;
-
-        case "Rejected":
-        color = "status-red"
-        break;
-
-        default:
-        break;
-      }
-      // var html = $(jobListingTemplate(listing)).children('.status').addClass(color);
+      listing.created_at = formatDisplayDate(listing.created_at);
+      var colorClass = getColorStatus(listing.status);
       var $html = $(jobListingTemplate(listing));
-      $html.find('.status').addClass(color);
+      $html.find('.status').addClass(colorClass);
       $('.job-listings').append($html);
     });
   }
+}
+
+function getColorStatus(status_name){
+  var color = "";
+  switch(status_name){
+    case "Application Submitted":
+    color = "status-submited";
+    break;
+
+    case "Just Added":
+    color = "status-black";
+    break;
+
+    case "Rejected":
+    color = "status-red"
+    break;
+
+    default:
+    break;
+  }
+  return color;
+}
+
+function formatDisplayDate(oridate){
+  var dateConverted = new Date(oridate);
+  var formattedDate = dateConverted.getDate() + " / " + (dateConverted.getMonth()+1) + " / " + dateConverted.getFullYear();
+  return formattedDate;
 }
 
 function updateListing(){
@@ -51,7 +59,6 @@ function updateListing(){
       $('.edit-form-wrap').removeClass('show');
     });
 
-    console.log(listingId);
     $.ajax({
       url: apiUrl + listingId
     }).done(function(listing){
@@ -78,12 +85,8 @@ function updateListing(){
         },
         method: 'PUT'
       }).done(function(listing){
-        // console.log(listingId);
         //format date to dd/mm/yyyy
-        var x = new Date(listing.created_at);
-        var fullDate = x.getDate() + " / " + (x.getMonth()+1) + " / " + x.getFullYear();
-        listing.created_at = fullDate;
-
+        listing.created_at = formatDisplayDate(listing.created_at);
         // find child element in .job-listings that has a matching data-id
         var $jobListings = $('.job-listings');
         // console.log($jobListings);
@@ -91,8 +94,11 @@ function updateListing(){
         // console.log(currentlistingElement);
         // change values to ajax response in child element
         var jobListingTemplate = Handlebars.compile( $('#job-listing-template').html() );
-        var updatedListing = jobListingTemplate(listing);
-        $currentlistingElement.replaceWith(updatedListing);
+
+        var colorClass = getColorStatus(listing.status);
+        var $updatedListing = $(jobListingTemplate(listing));
+        $updatedListing.find('.status').addClass(colorClass);
+        $currentlistingElement.replaceWith($updatedListing);
       });
     });
 
