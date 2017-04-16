@@ -11,6 +11,18 @@ module ApplicationHelper
     current_user.job_listings.where('created_at >= ?',Time.zone.now.beginning_of_day)
   end
 
+  def current_user_job_applications
+    User.find_by(id: session[:user_id]).job_listings
+  end
+
+  def current_user_weekly_job_applications(week_num)
+    current_user_job_applications.where('created_at >= ?',(week_num.to_i).week.ago)
+  end
+
+  def current_user_monthly_job_applications(month_num)
+    current_user_job_applications.where('created_at >= ?',(month_num.to_i).month.ago)
+  end
+
   def current_user_daily_job_listing_num
     current_user_daily_job_listings.count
   end
